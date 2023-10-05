@@ -6,56 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Microsoft – Cloud, Computers, Apps & Gaming</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-down.css' rel='stylesheet'>
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/chevron-down.css" rel="stylesheet" />
   </head>
   <body>
     <header>
-      <nav class="navbar">
+      <nav class="navbar desktop">
         <div class="left-navbar">
           <ul>
-            <li><img class="site-logo" src="./images/microsoft-logo.png" alt="Microsoft Logo" width="108" height="23" /></li>
-            <li><a class="menu-item" href="#">Microsoft 365</a></li>
-            <li><a class="menu-item" href="#">Teams</a></li>
-            <li><a class="menu-item" href="#">Windows</a></li>
-            <li><a class="menu-item" href="#">Surface</a></li>
-            <li><a class="menu-item" href="#">Xbox</a></li>
-            <li><a class="menu-item" href="#">Deals</a></li>
-            <li><a class="menu-item" href="#">Small Business</a></li>
-            <li><a class="menu-item" href="#">Support</a></li>
+            <li id="site-logo" class="site-logo-wrapper">
+              <a href="#"
+                ><picture><img class="site-logo" src="./images/microsoft-logo.png" alt="Microsoft Logo" width="108" height="23" /></picture
+              ></a>
+            </li>
+            <li id="microsoft-365"><a class="menu-item" href="#">Microsoft 365</a></li>
+            <li id="teams"><a class="menu-item" href="#">Teams</a></li>
+            <li id="windows"><a class="menu-item" href="#">Windows</a></li>
+            <li id="surface"><a class="menu-item" href="#">Surface</a></li>
+            <li id="xbox"><a class="menu-item" href="#">Xbox</a></li>
+            <li id="deals"><a class="menu-item" href="#">Deals</a></li>
+            <li id="small-business"><a class="menu-item" href="#">Small Business</a></li>
+            <li id="support"><a class="menu-item" href="#">Support</a></li>
           </ul>
         </div>
         <div class="right-navbar">
           <ul>
-            <li>
-              <button class="menu-item chevron" href="#">All Microsoft</button>
+            <li id="all-microsoft" class="button-menu-item">
+              <button class="icon chevron" href="#"><span class="btn-text">All Microsoft</span></button>
             </li>
-            <li><a class="menu-item" href="#">Search</a></li>
-            <li><a class="menu-item" href="#">Cart</a></li>
-            <li><a class="menu-item" href="#">Sign in</a></li>
+            <li id="search" class="button-menu-item">
+              <button class="icon search" href="#"><span class="btn-text">Search</span></button>
+            </li>
+            <li id="cart" class="button-menu-item">
+              <button class="icon cart" href="#"><span class="btn-text">Cart</span></button>
+            </li>
+            <li id="sign-in" class="sign-in-btn">
+              <div class="sign-in" href="#"><span class="btn-text">Sign in</span></div>
+              <div class="sign-in-icon"></div>
+            </li>
           </ul>
         </div>
       </nav>
+      <nav class="mobile-navbar mobile">
+        <div class="logo">
+          <a href="#"
+            ><picture><img class="site-logo" src="./images/microsoft-logo.png" alt="Microsoft Logo" width="108" height="23" /></picture
+          ></a>
+        </div>
+        <div class="burger-with-search"></div>
+        <div class="cart-with-sign-in"></div>
+      </nav>
     </header>
     <main class="main-content">
-      <div class="headline">Sophisticated style and multitasking speed powered by 12th Gen Intel Core. Offer ended already.</div>
-      <div class="image-container">
-        <img src="./images/microsoft-surface-sample.avif" alt="Microsoft Surface Image" />
-      </div>
-      <div class="spotlight">
-        <h2>Trade and Upgrade</h2>
-        <p>Get at least $100 off a qualifying Surface when you trade in an eligible used device</p>
-        <button>Shop Now ></button>
-      </div>
+      <section class="image-container">
+        <picture><img src="./images/banner-image.webp" alt="Microsoft Surface Image" /></picture>
+        <div class="spotlight-wrapper">
+          <div class="spotlight">
+            <div class="badge">
+              <p class="badge-label">New</p>
+            </div>
+            <h2 class="spotlight-heading">Surface Laptop Studio 2</h2>
+            <p class="spotlight-description">Cutting-edge design meets incredible performance in this versatile laptop for creativity and entertainment.</p>
+            <a href="#" class="cta-btn">Shop Now</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
       <ul>
-        <li>Choose your Microsoft 365</li>
-        <li>Shop Surface devices</li>
-        <li>Buy Xbox games and consoles</li>
-        <li>Shop Windows 10</li>
-        <li>Find your next PC</li>
-        <li>Shop Business</li>
+        <li class="icon-box">
+          <picture><img src="./images/surface-go2-icon.webp" alt="Surface Go 2 Icon" width="40" height="40"></picture>
+          <a href="#">Shop Surface devices</a>
+        </li>
+        <li class="icon-box">
+          <picture><img src="./images/microsoft-365-icon.webp" alt="Microsoft 365 Icon" width="40" height="40"></picture>
+          <a href="#">Choose your Microsoft 365</a></li>
+        <li class="icon-box">
+          <picture><img src="./images/xbox-icon.webp" alt="Xbox Icon" width="40" height="40"></picture>
+          <a href="#">Buy Xbox games and consoles</a></li>
+        <li class="icon-box">
+          <picture><img src="./images/keyboard-mouse-icon.webp" alt="Keyboard and Mouse Icon" width="40" height="40"></picture>
+          <a href="#">Shop for accessories</a></li>
+        <li class="icon-box">
+          <picture><img src="./images/briefcase-icon.webp" alt="Briefcase Icon" width="40" height="40"></picture>
+          <a href="#">Shop Business</a></li>
       </ul>
     </footer>
   </body>

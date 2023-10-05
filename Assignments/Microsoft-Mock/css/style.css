@@ -1,18 +1,26 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+p {
+  line-height: 1.5;
+}
+
+a {
+  color: #0067b8;
+}
+
 button {
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    border: 2px solid transparent;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: 2px solid transparent;
 }
 
 div {
@@ -20,12 +28,12 @@ div {
 }
 
 header {
-    height: 54px;
-    margin-bottom: 2px;
+  height: 54px;
+  margin-bottom: 2px;
 }
 
 .site-logo {
-    padding-right: 6px;
+  padding-right: 6px;
 }
 
 .navbar {
@@ -36,6 +44,7 @@ header {
   align-items: center;
   max-width: 1600px;
   margin: 0 auto;
+  white-space: nowrap;
 }
 
 .left-navbar {
@@ -49,6 +58,17 @@ header {
   justify-content: flex-start;
 }
 
+.right-navbar {
+  width: 30%;
+  max-height: 44px;
+}
+
+.right-navbar ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+}
+
 .navbar .left-navbar li,
 .navbar .right-navbar li {
   display: inline-block;
@@ -56,45 +76,96 @@ header {
   padding: 16px 8px 10px;
 }
 
-button.menu-item {
-    border: 2px solid transparent;
+header .navbar .button-menu-item {
+  padding: 16px 16px 10px;
 }
 
-.menu-item {
-    font-size: 0.813rem;
-    color: #262626;
-    border: 1px solid transparent;
-    text-decoration: none;
-    cursor: pointer;
+.menu-item,
+.sign-in-btn,
+.btn-text {
+  position: relative;
+  font-size: 0.813rem;
+  color: #262626;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.menu-item:hover {
-    border-bottom: 2px solid #262626;
+.menu-item:hover,
+button .btn-text:hover {
+  border-bottom: 2px solid #262626;
+  cursor: pointer;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+button.menu-item:hover,
+button.menu-item .btn-text {
+  border-bottom: 2px solid transparent;
 }
 
 .chevron::after {
-    font-family: "MWF-MDL2";
-    content: "";
-    position: absolute;
-    font-size: 8px;
-    display: inline-block;
-    color: currentColor;
-    font-weight: 700;
-    padding-top: 7px;
+  font-family: "MWF-MDL2";
+  content: "";
+  position: absolute;
+  font-size: 8px;
+  display: inline-block;
+  color: currentColor;
+  font-weight: 700;
+  padding: 5px 0 0 7px;
 }
 
-.right-navbar {
-  width: 30%;
+.search::after {
+  font-family: "MWF-MDL2";
+  content: "";
+  -ms-high-contrast-adjust: none;
+  border: none;
+  display: inline-block;
+  font-size: 16px;
+  position: relative;
+  margin-left: 6px;
+  vertical-align: sub;
 }
-.right-navbar ul {
+
+.cart::after {
+  font-family: "MWF-MDL2";
+  content: "";
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  margin-left: 6px;
+  border-bottom: solid 2px transparent;
+  vertical-align: sub;
+}
+
+header .navbar .sign-in-btn {
   display: flex;
-  list-style-type: none;
-  justify-content: flex-end;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-icon {
+  background-image: url("../images/user-icon.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+}
+
+.sign-in {
+  margin: 5px 10px 0 0;
+}
+
+.menu-item.search:hover::after {
+  border-bottom: none;
 }
 
 .main-content {
-  /* border: 3px solid black; */
-  background-color: rgb(218, 218, 218);
   height: auto;
   display: flex;
   flex-direction: column;
@@ -109,54 +180,210 @@ button.menu-item {
   padding: 5px;
 }
 
-.spotlight {
+.image-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.image-container img {
+  max-width: 100%;
+}
+
+.spotlight-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: auto;
+  left: 10%;
+  width: 475px;
+  max-width: 100%;
 }
 
 .spotlight > * {
   margin: 10px;
 }
 
-.spotlight button {
-  background-color: black;
-  color: white;
+.spotlight-heading,
+.spotlight-description {
+  color: #ffffff;
+  text-align: left;
 }
 
-.image-container {
-  width: 50%;
-  margin: 10px;
+.spotlight a.cta-btn {
+  display: inline-block;
+  background-color: #0067b8;
+  color: white;
+  padding: 0.625rem 0.75rem;
+  text-decoration: none;
+}
+
+.spotlight a:hover {
+  background-color: #00508E;
+}
+
+.badge {
+  display: inline-block;
+  color: #000000;
+  background-color: #ffb900;
+  padding: 6px 12px;
 }
 
 .footer {
-  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem 3rem 1rem;
 }
 
 .footer ul {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   justify-content: space-around;
   font-size: 12px;
+  gap: 3rem;
   /* font-size: 0.5em; */
+}
+
+.footer li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.icon-box picture {
+  margin-bottom: 0.5rem;
 }
 
 /* .footer > ul > li {
 } */
 
 @font-face {
-    font-family: "MWF-MDL2";
-    src: url("https://www.microsoft.com/mwf/_h/v3.54/mwf.app/fonts/mwfmdl2-v3.54.woff") format("woff"),url("https://www.microsoft.com/mwf/_h/v3.54/mwf.app/fonts/mwfmdl2-v3.54.ttf") format("truetype"),url("https://www.microsoft.com/mwf/_h/v3.54/mwf.app/fonts/mwfmdl2-v3.54.svg") format("svg")
+  font-family: "MWF-MDL2";
+  src: url("https://www.microsoft.com/mwf/_h/v3.54/mwf.app/fonts/mwfmdl2-v3.54.woff") format("woff"), url("https://www.microsoft.com/mwf/_h/v3.54/mwf.app/fonts/mwfmdl2-v3.54.ttf") format("truetype"), url("https://www.microsoft.com/mwf/_h/v3.54/mwf.app/fonts/mwfmdl2-v3.54.svg") format("svg");
 }
 
 @media only screen and (min-width: 860px) {
-    header {
-        padding: 0 5%;
-    }
+  header {
+    padding: 0 5%;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  #microsoft-365,
+  #teams,
+  #windows,
+  #surface,
+  #xbox,
+  #all-microsoft,
+  #searc,
+  .navbar.desktop {
+    display: none;
+  }
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-container {
+    flex-direction: column;
+  }
+
+  .image-container img {
+    min-height: 300px;
+  }
+  .spotlight {
+    background-color: #ffffff;
+    box-shadow: 0 0.1875rem 0.4375rem 0 rgba(0,0,0,.13), 0 0.0625rem 0.125rem 0 rgba(0,0,0,.11);
+    padding: 2rem;
+    margin: 0 15px;
+  }
+  .spotlight-heading, .spotlight-description {
+    color: #000000;
+  }
+  .spotlight-wrapper {
+    position: inherit;
+    display: block;
+    width: 100%;
+    margin: -50px auto 50px auto;
+    top: 0;
+    left: 0;
+  }  
+  
+  footer.footer {
+    padding: 0 1rem 3rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 861px) {
+  .mobile-navbar {
+    display: none;
+  }
+  .image-container img {
+    min-height: 350px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  #small-business,
+  #deals {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  .image-container img {
+    min-height: 400px;
+  }
+}
+
+@media only screen and (min-width: 1060px) {
+  .image-container img {
+    min-height: 460px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #support {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1301px) {
+  .image-container img {
+    min-height: 592px;
+  }
+}
+
+@media only screen and (max-width: 1516px) {
+  #search .btn-text,
+  #cart .btn-text,
+  #sign-in .btn-text {
+    display: none;
+  }
+  #search.button-menu-item,
+  #cart.button-menu-item,
+  #sign-in.button-menu-item {
+    padding: 16px 5px;
+  }
+
+  #all-microsoft.button-menu-item {
+    margin-right: 10px;
+  }
 }
 
 @media only screen and (min-width: 1779px) {
-    .menu-item {
-        margin: 0 4px;
-    }
+  .menu-item {
+    margin: 0 4px;
+  }
 }
