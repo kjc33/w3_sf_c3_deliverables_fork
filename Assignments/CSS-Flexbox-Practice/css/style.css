@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+main, header, nav {
+    display: flex;
+    position: relative;
+}
+
+main, .right-col-main {
+    flex-direction: column;
+}
+
+body main .left-col-main header {
+    position: sticky;
+    top: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 1.5em;
+    background-color: #ffffff;
+    z-index: 9999;
+}
+
+.left-col-main {
+    flex-grow: 1;
+}
+
+.right-col-main {
+    display: flex;
+    gap: 20px;
+}
+
+.primary-cat, .featured-cat, .primary-ctas {
+    padding: 0 20px;
+}
+
+.col-3-featured.left-col, .col-3-featured.middle-col, .col-2-primary-ctas.left-col, .col-2-primary-ctas.right-col {
+    margin-bottom: 20px;
+}
+
+.primary-nav {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+nav {
+    align-items: center;
+}
+
+.top-level a, .bottom-level a {
+    font-family: sans-serif;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.top-level a {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.bottom-level a {
+    font-size: 0.75rem;
+}
+
+.top-level a:hover, .bottom-level a:hover {
+    color: dodgerblue;
+}
+
+.mobile-nav-bar {
+    font-size: 1.75rem;
+}
+
+@media screen and (min-width: 500px) {
+    .primary-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+    .mobile-nav-bar {
+        display: none;
+    }
+    main {
+        flex-direction: row;
+    }
+    body main .left-col-main header {
+        position: sticky;
+        top: 0;
+        flex-direction: column;
+        padding: 20px 0 20px 20px;
+    }
+    .left-col-main {
+        width: 25%;
+    }
+    .right-col-main {
+        width: 75%;
+    }
+    .primary-cat {
+        padding: 20px 20px 0 20px;
+    }
+}
+
+@media screen and (min-width: 880px) {
+    .col-3.featured-cat,
+    body main .right-col-main .col-2.primary-ctas {
+        display: flex;
+        gap: 20px;
+    }
+    body main .right-col-main .col-3.featured-cat .col-3-featured {
+        flex: 1;
+        margin-bottom: 0;
+    }
+    .col-2.primary-ctas .col-2-primary-ctas.left-col,
+    .col-2.primary-ctas .col-2-primary-ctas.right-col {
+        flex-grow: 1;
+    }
+}
